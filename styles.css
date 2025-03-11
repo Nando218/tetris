@@ -1,31 +1,119 @@
 body {
     text-align: center;
-    background-color: black;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: #9bbc0f;  /* Classic Game Boy green */
+    color: #0f380f;  /* Dark Game Boy green */
+    font-family: 'Press Start 2P', monospace;  /* Classic retro font */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #0f380f;
+    text-shadow: 2px 2px #306230;
+    margin: 5px 0;
+}
+
+.game-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10px;
 }
 
 .scoreContainer {
-    font-size: 20px;
-    margin-bottom: 10px;
-
+    font-size: 18px;
+    background: #8bac0f;
+    padding: 10px 20px;
+    border: 4px solid #0f380f;
+    border-radius: 0;
+    box-shadow: 4px 4px #0f380f;
+    margin: 0 20px;
+    align-self: center;
 }
 
 canvas {
-    border: 3px solid white;
-    background-color: black;
-    display: block;
-    margin: 10px auto;
+    border: 4px solid #0f380f;
+    background: #8bac0f;
+    box-shadow: 4px 4px #0f380f;
+    border-radius: 0;
 }
 
 button {
-    font-size: 18px;
-    background-color: orange;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 16px;
+    background: #306230;
+    color: #9bbc0f;
+    padding: 10px 20px;
+    border: 3px solid #0f380f;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 0;
+    box-shadow: 4px 4px #0f380f;
+    transition: all 0.1s ease;
 }
 
 button:hover {
-    background-color: red;
-    transition: 0.5s; ;
+    background: #0f380f;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px #0f380f;
+}
+
+button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px #0f380f;
+}
+
+/* Classic Tetris piece colors */
+.piece-I {
+    background-color: #00f0f0; /* Cyan */
+}
+
+.piece-O {
+    background-color: #f0f000; /* Yellow */
+}
+
+.piece-T {
+    background-color: #a000f0; /* Purple */
+}
+
+.piece-S {
+    background-color: #00f000; /* Green */
+}
+
+.piece-Z {
+    background-color: #f00000; /* Red */
+}
+
+.piece-J {
+    background-color: #0000f0; /* Blue */
+}
+
+.piece-L {
+    background-color: #f0a000; /* Orange */
+}
+
+/* Line clearing animation with retro feel */
+@keyframes lineFadeOut {
+    from { 
+        opacity: 1;
+        background: #0f380f;
+    }
+    to { 
+        opacity: 0;
+        background: #9bbc0f;
+    }
+}
+
+.line-clearing {
+    animation: lineFadeOut 0.3s steps(3) forwards;
 }
