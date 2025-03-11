@@ -5,7 +5,7 @@ const scoreElement = document.getElementById("score");
 const highScoreElement = document.getElementById("highScore");
 
 const ROWS = 20, COLS = 10, SIZE = 30;
-// let board = Array.from({ length: ROWS }, () => Array(COLS).fill(0));
+
 
 let board = [];
 for (let i = 0; i < ROWS; i++) {
@@ -18,13 +18,13 @@ let highScore = localStorage.getItem("highScore") || 0;
 highScoreElement.textContent = highScore;
 
 const SHAPES = [
-    { shape: [[1, 1, 1, 1]], color: '#00f0f0' }, // I piece - Cyan
-    { shape: [[1,1], [1,1]], color: '#f0f000' }, // O piece - Yellow
-    { shape: [[0,1,0], [1,1,1]], color: '#a000f0' }, // T piece - Purple
-    { shape: [[1,1,0], [0,1,1]], color: '#f00000' }, // Z piece - Red
-    { shape: [[0,1,1], [1,1,0]], color: '#00f000' }, // S piece - Green
-    { shape: [[1,0,0], [1,1,1]], color: '#f0a000' }, // L piece - Orange
-    { shape: [[0,0,1], [1,1,1]], color: '#0000f0' }, // J piece - Blue
+    { shape: [[1, 1, 1, 1]], color: '#00f0f0' }, 
+    { shape: [[1,1], [1,1]], color: '#f0f000' }, 
+    { shape: [[0,1,0], [1,1,1]], color: '#a000f0' }, 
+    { shape: [[1,1,0], [0,1,1]], color: '#f00000' }, 
+    { shape: [[0,1,1], [1,1,0]], color: '#00f000' }, 
+    { shape: [[1,0,0], [1,1,1]], color: '#f0a000' }, 
+    { shape: [[0,0,1], [1,1,1]], color: '#0000f0' }, 
 ];
 
 let currentPiece = null;
@@ -85,7 +85,7 @@ function fillLines() {
             board.splice(y, 1);
             board.unshift(Array(COLS).fill({ value: 0, color: null }));
             linesClear++;
-            y++; // Check the same row again as everything has shifted down
+            y++;
         }
     }
 

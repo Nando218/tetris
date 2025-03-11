@@ -1,8 +1,8 @@
 body {
     text-align: center;
-    background-color: #9bbc0f;  /* Classic Game Boy green */
-    color: #0f380f;  /* Dark Game Boy green */
-    font-family: 'Press Start 2P', monospace;  /* Classic retro font */
+    background-color: #9bbc0f;  
+    color: #0f380f;  
+    font-family: 'Press Start 2P', monospace;  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,36 +73,35 @@ button:active {
     box-shadow: 2px 2px #0f380f;
 }
 
-/* Classic Tetris piece colors */
+
 .piece-I {
-    background-color: #00f0f0; /* Cyan */
+    background-color: #00f0f0; 
 }
 
 .piece-O {
-    background-color: #f0f000; /* Yellow */
+    background-color: #f0f000; 
 }
 
 .piece-T {
-    background-color: #a000f0; /* Purple */
+    background-color: #a000f0; 
 }
 
 .piece-S {
-    background-color: #00f000; /* Green */
+    background-color: #00f000; 
 }
 
 .piece-Z {
-    background-color: #f00000; /* Red */
+    background-color: #f00000; 
 }
 
 .piece-J {
-    background-color: #0000f0; /* Blue */
+    background-color: #0000f0; 
 }
 
 .piece-L {
-    background-color: #f0a000; /* Orange */
+    background-color: #f0a000; 
 }
 
-/* Line clearing animation with retro feel */
 @keyframes lineFadeOut {
     from { 
         opacity: 1;
